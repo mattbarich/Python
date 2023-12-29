@@ -106,8 +106,8 @@ class App:
         self._running = True
         
         #Load images for Snake and apple
-        original_snake = pygame.image.load("pygame.png").convert()
-        original_apple = pygame.image.load("apple.jpg").convert()
+        original_snake = pygame.image.load("Images/pygame.png").convert()
+        original_apple = pygame.image.load("Images/apple.jpg").convert()
         new_width = 50
         new_height = 50
         self._image_surf = pygame.transform.scale(original_snake, (new_width,new_height))
