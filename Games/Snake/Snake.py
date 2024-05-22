@@ -75,10 +75,12 @@ class Player:
         for i in range(0,self.length):
             surface.blit(image,(self.x[i],self.y[i])) 
  
+
+ #This Class needs to be fixed....
 class Game:
-    def isCollision(self,x1,y1,x2,y2,bsize):
-        if x1 >= x2 and x1 <= x2 + bsize:
-            if y1 >= y2 and y1 <= y2 + bsize:
+    def isCollision(self,x1,y1,x2,y2):
+        if x1 >= x2 and x1 <= x2 + 44:
+            if y1 >= y2 and y1 <= y2 + 44:
                 return True
         return False
  
@@ -120,17 +122,17 @@ class App:
     def on_loop(self):
         self.player.update()
  
-        # does snake eat apple?
+        # does snake eat apple? - Needs to be fixed
         for i in range(0,self.player.length):
-            if self.game.isCollision(self.apple.x,self.apple.y,self.player.x[i], self.player.y[i],44):
-                self.apple.x = randint(2,9) * 44
-                self.apple.y = randint(2,9) * 44
+            if self.game.isCollision(self.apple.x,self.apple.y,self.player.x[i], self.player.y[i]):
+                self.apple.x = randint(2,9) * 40
+                self.apple.y = randint(2,9) * 40
                 self.player.length = self.player.length + 1
  
  
-        # does snake collide with itself?
+        # does snake collide with itself? - Needs to be fixed
         for i in range(2,self.player.length):
-            if self.game.isCollision(self.player.x[0],self.player.y[0],self.player.x[i], self.player.y[i],40):
+            if self.game.isCollision(self.player.x[0],self.player.y[0],self.player.x[i], self.player.y[i]):
                 print("You lose! Collision: ")
                 print("x[0] (" + str(self.player.x[0]) + "," + str(self.player.y[0]) + ")")
                 print("x[" + str(i) + "] (" + str(self.player.x[i]) + "," + str(self.player.y[i]) + ")")
