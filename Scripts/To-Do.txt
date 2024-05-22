@@ -1,0 +1,8 @@
+Download Helper:
+    - Edit where the files are moved to. Ideally they would be moved out of the Download folder
+      and placed in the correct location in the file system (EX: A pdf would be moved to ~Documents/PDFs, 
+      a document would be moved to ~Documents/)
+
+Weather:
+    - Take a zip code as an argument and retrieve, sort the data. 
+    - Send an SMS message to my phone each morning via Twilio.
